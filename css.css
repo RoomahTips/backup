@@ -49,7 +49,85 @@ a img {border-width:0;}
 #output{display:inline-block;}
 .output{display:inline-block;monospace;white-space:initial;word-spacing:normal;word-break:normal;hyphens:none;color:#000;cursor:pointer;background:#fff;border-radius:3px;line-height:1;padding:2px 5px;margin:0;box-shadow: inset 0px 0px 1px rgba(0,0,0,.0.8); }
 .output:focus,.output:active{outline:none}
-
+.info-trens-square {
+ width: 200px; height: 80px;
+ overflow: hidden;
+ position: relative;
+ cursor: pointer;
+ margin: 15px;
+ border-radius: 6px;
+ float: left;
+  box-shadow: 0 0 10px;
+}
+.anim {
+  animation: jiggle 1s ease-in infinite;
+}
+@keyframes jiggle {
+  48%, 62% {
+    transform: scale(1.0, 1.0)
+  }
+  50% {
+    transform: scale(1.1, 0.9)
+  }
+  56% {
+    transform: scale(0.9, 1.1) translate(0, -5px)
+  }
+  59% {
+    transform: scale(1.0, 1.0) translate(0, -3px)
+  }
+}
+.info-trens-circle {
+ width: 80px; height: 80px;
+ overflow: hidden;
+ position: relative;
+ cursor: pointer;
+ margin: 15px;
+ border-radius: 100%;
+ float: left;
+}
+.info-trens {
+ background: #1d1d1d;
+ font-family: 'Orbitron', sans-serif;
+ font-size: 1.2em;
+ text-align: center;
+ color: #fff; 
+ position: absolute;
+ top: 3px;
+ left: 3px;
+}
+.info-trens-square .info-trens {
+ width: 194px;
+ line-height: 74px;
+ border-radius: 5px;
+}
+.info-trens-circle .info-trens {
+ width: 74px; height: 74px;
+ border-radius: 100%;
+}
+/*=================*/
+/*====GRADIENT====*/
+.gradient, .gradient:after {
+ display: block;
+ content: "";
+ width: 400px; height: 80px;
+ background: #bd328f;
+ background: -moz-linear-gradient(-45deg,  #bd328f 0%, #bd328f 18%, #2976ab 42%, #292f75 62%, #bd328f 82%, #bd328f 100%);
+ background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#bd328f), color-stop(18%,#bd328f), color-stop(42%,#2976ab), color-stop(62%,#292f75), color-stop(82%,#bd328f), color-stop(100%,#bd328f));
+ background: -webkit-linear-gradient(-45deg,  #bd328f 0%,#bd328f 18%,#2976ab 42%,#292f75 62%,#bd328f 82%,#bd328f 100%);
+ background: -o-linear-gradient(-45deg,  #bd328f 0%,#bd328f 18%,#2976ab 42%,#292f75 62%,#bd328f 82%,#bd328f 100%);
+ background: -ms-linear-gradient(-45deg,  #bd328f 0%,#bd328f 18%,#2976ab 42%,#292f75 62%,#bd328f 82%,#bd328f 100%);
+ background: linear-gradient(135deg,  #bd328f 0%,#bd328f 18%,#2976ab 42%,#292f75 62%,#bd328f 82%,#bd328f 100%);
+}
+.gradient {
+ animation: 8s anim linear infinite;
+}
+.gradient:after {
+ transform: translateX(400px);
+}
+@keyframes anim{
+ 0% {transform: translateX(0px) ;}
+ 100% {transform: translateX(-400px) ;}
+}
 
 #random-posts li a:before{ margin-right:5px; padding:0.4em 0.6em;content:&quot; \f054&quot;;  font-family:FontAwesome; font-style:normal; font-size:16px;position:relative; float:right}
 #random-posts li a{padding-left:0px; content:&quot;\f054&quot;; ;}
